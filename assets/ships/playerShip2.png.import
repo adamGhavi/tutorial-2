@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fasilkom.png-811230bee752126972e823ef8f345618.stex"
+path="res://.import/playerShip2.png-08ffedccf913b815835ad0aef246f4ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fasilkom.png"
-dest_files=[ "res://.import/fasilkom.png-811230bee752126972e823ef8f345618.stex" ]
+source_file="res://assets/ships/playerShip2.png"
+dest_files=[ "res://.import/playerShip2.png-08ffedccf913b815835ad0aef246f4ca.stex" ]
 
 [params]
 

@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/CameraShake.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ships/RedShip.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/environment/StoneWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/environment/RocketPlatform.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2100, 103.5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RocketPlatform" parent="." groups=["finishlines"] instance=ExtResource( 4 )]
+position = Vector2( 3087, 417 )
+
+[node name="RedShip" parent="." instance=ExtResource( 2 )]
+position = Vector2( 129, 400 )
+
+[node name="Camera2D" type="Camera2D" parent="RedShip"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
+script = ExtResource( 1 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StoneWall" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 576, 535 )
+
+[node name="StoneWall2" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1035, 462 )
+scale = Vector2( 0.5, 1 )
+
+[node name="StoneWall3" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1037, 43 )
+
+[node name="StoneWall4" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1442, 122 )
+scale = Vector2( 0.5, 1 )
+
+[node name="StoneWall5" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1437, 563 )
+
+[node name="StoneWall6" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1783, 527 )
+scale = Vector2( 0.5, 0.75 )
+
+[node name="StoneWall7" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 1772, 98 )
+scale = Vector2( 0.5, 0.75 )
+
+[node name="StoneWall8" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 2087, 131 )
+scale = Vector2( 0.5, 1 )
+
+[node name="StoneWall10" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 2083, 546 )
+
+[node name="StoneWall11" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 2417, 401 )
+scale = Vector2( 0.5, 1.5 )
+
+[node name="StoneWall12" parent="Walls" instance=ExtResource( 3 )]
+position = Vector2( 2418, -29 )
+
+[node name="Bounds" type="Node2D" parent="."]
+
+[node name="LowerBound" type="StaticBody2D" parent="Bounds" groups=["obstacles"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/LowerBound"]
+position = Vector2( 2100, 705.5 )
+shape = SubResource( 1 )
+
+[node name="UpperBound" type="StaticBody2D" parent="Bounds" groups=["obstacles"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/UpperBound"]
+position = Vector2( 2100, -103 )
+shape = SubResource( 1 )

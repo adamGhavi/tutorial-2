@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/environment/platform.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 201, 49 )
+
+[sub_resource type="Gradient" id=10]
+offsets = PoolRealArray( 0, 0.274286, 0.868571 )
+colors = PoolColorArray( 1, 0.677678, 0.18705, 1, 0.784314, 0.14902, 0.14902, 1, 0.219608, 0.054902, 0.054902, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 10 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.225632 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 20.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 136.76
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 25.0
+scale_random = 0.46
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[node name="RocketPlatform" type="StaticBody2D"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 60 )
+shape = SubResource( 1 )
+
+[node name="RocketDown1" type="Particles2D" parent="."]
+position = Vector2( -120, 150 )
+amount = 12
+speed_scale = 2.0
+local_coords = false
+process_material = SubResource( 8 )
+
+[node name="RocketDown2" type="Particles2D" parent="."]
+position = Vector2( 120, 150 )
+amount = 12
+speed_scale = 2.0
+local_coords = false
+process_material = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
