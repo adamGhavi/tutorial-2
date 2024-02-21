@@ -1,15 +1,17 @@
 # Latihan 1
 
-Apa saja pesan log yang dicetak pada panel Output?
+> Apa saja pesan log yang dicetak pada panel Output?
 
-> --- Debugging process started ---
+--- Debugging process started ---
 Godot Engine v3.5.3.stable.official.6c814135b - https://godotengine.org
 OpenGL ES 3.0 Renderer: NVIDIA GeForce MX330/PCIe/SSE2
 Async. shader compilation: OFF
+
 Platform initialized
 
-Coba gerakkan landasan ke batas area bawah, lalu gerakkan kembali ke atas hingga hampir menyentuh batas atas. Apa saja pesan log yang dicetak pada panel Output?
-> Reached objective!
+> Coba gerakkan landasan ke batas area bawah, lalu gerakkan kembali ke atas hingga hampir menyentuh batas atas. Apa saja pesan log yang dicetak pada panel Output?
+
+Reached objective!
 
 Buka scene MainLevel dengan tampilan workspace 2D. Apakah lokasi scene ObjectiveArea memiliki kaitan dengan pesan log yang dicetak pada panel Output pada percobaan sebelumnya?
 ObjectiveArea memiliki node CollisionShape2D yang akan men-trigger console output "Reached objective!" ketika mendeteksi collision dengan BlueShip
